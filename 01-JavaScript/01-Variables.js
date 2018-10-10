@@ -14,9 +14,9 @@ console.log('amigable', typeof amigable);
 console.log('fechaDeNacimiento', typeof fechaDeNacimiento);
 console.log(10 + 10);
 if (-31) {
-    //Si -
+    //Si - thruty
 } else {
-    //No
+    //No  falsy
 }
 
 if ('bryan') {

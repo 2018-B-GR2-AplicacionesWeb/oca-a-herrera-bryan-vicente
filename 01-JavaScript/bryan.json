@@ -1,9 +1,11 @@
-{
-  "llave":"valor",
-  "numero":1,
-  "casado":true,
-  "hijos": null,
-  "casa": {
-    "llave":"valor",
+[
+  {
+    "llave": "valor",
+    "numero": 1,
+    "casado": true,
+    "hijos": null,
+    "casa": {
+      "llave": "valor"
+    }
   }
-}
+]
