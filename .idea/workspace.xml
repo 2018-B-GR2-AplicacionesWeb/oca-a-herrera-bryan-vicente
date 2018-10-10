@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f68c805d-9382-4784-a5b8-867ed39aa80a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/01-JavaScript/02-Arreglos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-JavaScript/03-Funciones.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-JavaScript/01-Variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/01-JavaScript/01-Variables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-JavaScript/bryan.json" beforeDir="false" afterPath="$PROJECT_DIR$/01-JavaScript/bryan.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,7 +27,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="2" />
+          <entry key="js" value="3" />
           <entry key="json" value="1" />
           <entry key="md" value="2" />
         </counts>
@@ -37,14 +35,14 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="2" />
+          <entry key="JavaScript" value="3" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1321" />
+          <entry key="js" value="1945" />
           <entry key="json" value="85" />
           <entry key="md" value="15" />
         </counts>
@@ -52,7 +50,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="85" />
-          <entry key="JavaScript" value="1321" />
+          <entry key="JavaScript" value="1945" />
           <entry key="Markdown" value="15" />
         </counts>
       </usages-collector>
@@ -96,11 +94,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/01-JavaScript/02-Arreglos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+            <state relative-caret-position="161">
+              <caret line="66" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/01-JavaScript/03-Funciones.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -141,6 +148,7 @@
         <option value="$PROJECT_DIR$/01-JavaScript/01-Variables.js" />
         <option value="$PROJECT_DIR$/01-JavaScript/bryan.json" />
         <option value="$PROJECT_DIR$/01-JavaScript/02-Arreglos.js" />
+        <option value="$PROJECT_DIR$/01-JavaScript/03-Funciones.js" />
       </list>
     </option>
   </component>
@@ -156,7 +164,9 @@
     <option name="width" value="1400" />
     <option name="height" value="820" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -203,12 +213,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.03-Funciones.js">
     <configuration name="02-Arreglos.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="02-Arreglos.js" working-dir="$PROJECT_DIR$/01-JavaScript">
       <method v="2" />
     </configuration>
+    <configuration name="03-Funciones.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="03-Funciones.js" working-dir="$PROJECT_DIR$/01-JavaScript">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.02-Arreglos.js" />
+      <item itemvalue="Node.js.03-Funciones.js" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.03-Funciones.js" />
         <item itemvalue="Node.js.02-Arreglos.js" />
       </list>
     </recent_temporary>
@@ -225,12 +243,12 @@
       <updated>1539114608844</updated>
       <workItem from="1539114614394" duration="376000" />
       <workItem from="1539115016572" duration="3999000" />
-      <workItem from="1539199370768" duration="2531000" />
+      <workItem from="1539199370768" duration="5391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6906000" />
+    <option name="totallyTimeSpent" value="9766000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -301,8 +319,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/01-JavaScript/02-Arreglos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+        <state relative-caret-position="161">
+          <caret line="66" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-JavaScript/03-Funciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
         </state>
       </provider>
     </entry>
