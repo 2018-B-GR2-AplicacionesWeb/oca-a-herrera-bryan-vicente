@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f68c805d-9382-4784-a5b8-867ed39aa80a" name="Default Changelist" comment="" />
+    <list default="true" id="f68c805d-9382-4784-a5b8-867ed39aa80a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/01-JavaScript/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-TypeScript/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-TypeScript/01-Tipos-variables.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-TypeScript/02-Observables.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitgnore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -26,24 +33,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="3" />
-          <entry key="json" value="1" />
+          <entry key="gitgnore" value="3" />
+          <entry key="js" value="5" />
+          <entry key="json" value="2" />
           <entry key="md" value="2" />
+          <entry key="ts" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="3" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="5" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="gitgnore" value="30" />
           <entry key="js" value="1945" />
           <entry key="json" value="85" />
           <entry key="md" value="15" />
+          <entry key="ts" value="644" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -51,6 +63,8 @@
           <entry key="JSON" value="85" />
           <entry key="JavaScript" value="1945" />
           <entry key="Markdown" value="15" />
+          <entry key="PLAIN_TEXT" value="30" />
+          <entry key="TypeScript" value="644" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -63,59 +77,39 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bryan.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="34">
-                <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01-JavaScript/01-Variables.js">
+        <entry file="file://$PROJECT_DIR$/02-TypeScript/01-Tipos-variables.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            <state relative-caret-position="357">
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01-JavaScript/02-Arreglos.js">
+        <entry file="file://$PROJECT_DIR$/02-TypeScript/01-Tipos-variables.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="66" selection-start-line="65" selection-start-column="28" selection-end-line="66" />
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/01-JavaScript/03-Funciones.js">
+        <entry file="file://$PROJECT_DIR$/02-TypeScript/02-Observables.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="204">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01-JavaScript/bryan.json">
+        <entry file="file://$PROJECT_DIR$/02-TypeScript/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -126,6 +120,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -148,6 +143,10 @@
         <option value="$PROJECT_DIR$/01-JavaScript/bryan.json" />
         <option value="$PROJECT_DIR$/01-JavaScript/02-Arreglos.js" />
         <option value="$PROJECT_DIR$/01-JavaScript/03-Funciones.js" />
+        <option value="$PROJECT_DIR$/02-TypeScript/01-Tipos-variables.ts" />
+        <option value="$PROJECT_DIR$/02-TypeScript/.gitgnore" />
+        <option value="$PROJECT_DIR$/01-JavaScript/.gitgnore" />
+        <option value="$PROJECT_DIR$/02-TypeScript/02-Observables.ts" />
       </list>
     </option>
   </component>
@@ -183,6 +182,17 @@
               <item name="oca-a-herrera-bryan-vicente" type="462c0819:PsiDirectoryNode" />
               <item name="01-JavaScript" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="oca-a-herrera-bryan-vicente" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oca-a-herrera-bryan-vicente" type="462c0819:PsiDirectoryNode" />
+              <item name="01-JavaScript" type="462c0819:PsiDirectoryNode" />
+              <item name="05-nodejs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oca-a-herrera-bryan-vicente" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oca-a-herrera-bryan-vicente" type="462c0819:PsiDirectoryNode" />
+              <item name="02-TypeScript" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -194,9 +204,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Git/bin/git.exe" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USRKAP\Documents\GitHub\oca-a-herrera-bryan-vicente\02-TypeScript" />
       <recent name="C:\Users\USRKAP\Documents\GitHub\oca-a-herrera-bryan-vicente\01-JavaScript" />
     </key>
   </component>
@@ -249,10 +261,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10511000" />
+    <option name="totallyTimeSpent" value="14298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23977433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -265,8 +278,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32974428" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32974428" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -275,6 +288,12 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/02-TypeScript/01-Tipos-variables.js" />
+        <option value="$PROJECT_DIR$/02-TypeScript/02-Observables.js" />
+      </list>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -328,6 +347,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-TypeScript/01-Tipos-variables.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-TypeScript/01-Tipos-variables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-JavaScript/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-TypeScript/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-TypeScript/02-Observables.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
         </state>
       </provider>
     </entry>
