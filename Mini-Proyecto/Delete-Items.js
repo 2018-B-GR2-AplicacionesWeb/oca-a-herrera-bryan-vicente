@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 var filepath = "Comics.txt";
-=======
+
 /*var filepath = "C:/directorio-cualquiera/archivo-existente.txt";
 >>>>>>> b7ed7b831a1fcbf12ab2a2d89f9a990fcf0952fe
 fs.exists(filepath, function(exists) {
