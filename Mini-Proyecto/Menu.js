@@ -35,7 +35,6 @@ stdin.addListener("data", function(d) {
                     } else {
                         resolve(reply);
                         console.log("Data ca: " + reply);
-
                     }
                 });
             });
@@ -58,15 +57,38 @@ stdin.addListener("data", function(d) {
         });
 
     }
-    else if(d.toString().trim() == "3"){
-        console.log("Tu nombre: " + d.toString().trim());
+    else if(d.toString().trim() == "3") {
+        var myJSONObject = {"movie": "Iron Man 1", "actor": "Robert Downey Jr.", "movies": "6"};
+        console.log(myJSONObject);
+            var clienteMod = myJSONObject;
+            return new Promise((resolve, reject) => {
+                fs.readFile('Comics.json', 'utf-8', (err, contenido) => {
+                    if (err) {
+                        reject("Don't changes the movies");
+                    }
+                    else {
+                        const baseClientes = JSON.parse(contenido);
+                        var aux = baseClientes.movies = 3;
+                        //baseClientes.push(clienteMod);
+                        fs.writeFile('Comics.json', JSON.stringify(aux), (error) => {
+                            if (error) {
+                                reject("Error al change the movie");
+                            }
+                            else {
+                                resolve("Movie changed successful");
+                            }
+                        });
+                    }
+                });
+            });
+
     }
     else if(d.toString().trim() == "4"){
-        var myJSONObject ={"name": "Bryan", "LastName": "Ocaña", "age": "24"};
+        var myJSONObject ={"movie": "Iron Man 1", "actor": "Robert Downey Jr.", "movies": 6};
         console.log(myJSONObject);
-        console.log(myJSONObject.name);
-        delete myJSONObject.name;
-        delete myJSONObject.age;
+        //console.log(myJSONObject.movie);
+        delete myJSONObject.movie;
+        delete myJSONObject.movies;
         console.log(myJSONObject);
     }
 
