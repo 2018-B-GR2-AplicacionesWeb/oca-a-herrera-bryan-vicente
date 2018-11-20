@@ -1,4 +1,4 @@
-var filepath = "Comics.txt";
+var filepath = "Comics.json";
 
 /*var filepath = "C:/directorio-cualquiera/archivo-existente.txt";
 >>>>>>> b7ed7b831a1fcbf12ab2a2d89f9a990fcf0952fe
@@ -42,7 +42,7 @@ const promesaUpdateData = (nombreArchivo, contenidoArchivo) => {
 
 promesa('Delete.txt').then((contenido) => {
     console.log('Good read data update: ' + contenido);
-    return promesaUpdateData('Comics.txt', contenido);
+    return promesaUpdateData('Comics.json', contenido);
     // Promesa
 }).then((contenidoCompleto) => {
     console.log("Data complete: " + contenidoCompleto);

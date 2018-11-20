@@ -22,7 +22,7 @@ const promesaUpdateData = (nombreArchivo, contenidoArchivo) => {
 
 promesa('Update-Items.txt').then((contenido) => {
   console.log('Good read data update: ' + contenido);
-      return promesaUpdateData('Comics.txt', contenido);
+      return promesaUpdateData('Comics.json', contenido);
   // Promesa
           }).then((contenidoCompleto) => {
               console.log("Data complete: " + contenidoCompleto);

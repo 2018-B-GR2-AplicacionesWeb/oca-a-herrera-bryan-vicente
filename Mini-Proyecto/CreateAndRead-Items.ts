@@ -24,7 +24,7 @@ const fs = require('fs');
 
     promise('Insert-Item.txt').then((contenido) => {
         console.log('Good read data ' + contenido);
-        return promesaEscritura('Comics.txt', contenido);
+        return promesaEscritura('Comics.json', contenido);
         // Promesa
     }).then((contenidoCompleto) => {
         console.log("Data complete: " + contenidoCompleto);
