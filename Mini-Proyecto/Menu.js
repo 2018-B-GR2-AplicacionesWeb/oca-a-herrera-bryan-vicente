@@ -35,6 +35,7 @@ stdin.addListener("data", function(d) {
                     } else {
                         resolve(reply);
                         console.log("Data ca: " + reply);
+                        options();
                     }
                 });
             });
@@ -92,6 +93,6 @@ stdin.addListener("data", function(d) {
         console.log(myJSONObject);
     }
 
-    options();
+    //options();
 });
 
