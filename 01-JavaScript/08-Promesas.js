@@ -1,4 +1,4 @@
-/Promesa, instancia de la clase Promise
+//Promesa, instancia de la clase Promise
 
 const fs = require('fs');
 
