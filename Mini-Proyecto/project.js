@@ -2,7 +2,45 @@ const inquirer = require('inquirer');
 const rxjs = require('rxjs');
 const { Observable } = require('rxjs');
 const fs   = require('fs');
-const path = require('path');
+
+/*const preguntaMenu = {
+    type: 'list',
+    name: 'opcionMenu',
+    message: 'Que quieres hacer',
+    choices: [
+        'Crear',
+        'Borrar',
+        'Buscar',
+        'Actualizar',
+    ]
+};
+
+function main() {
+    preguntarOpcionesMenu();opcionesRespuesta();
+}
+
+main();
+
+function preguntarOpcionesMenu() {
+            return rxjs.from(inquirer.prompt(preguntaMenu))
+                .pipe(map((respuesta) => {
+                        return respuesta;
+                    }));
+}
+
+function opcionesRespuesta() {
+        switch (opcion) {
+            case 'Crear':
+                break;
+            case 'Buscar':
+                break;
+            case 'Actualizar':
+                break;
+            case 'Borrar':
+                break;
+        }
+}*/
+
 
 const observe = Observable.create(function(obs) {
     obs.next({
@@ -18,16 +56,65 @@ const observe = Observable.create(function(obs) {
     });
     obs.next({
         type: 'input',
-        name: 'actor',
-        message: "Cúal es el nombre del actor",
+        name: 'archivo',
+        message: "Cúal es el nombre del archivo",
     });
     obs.complete();
 });
 
+/*const observe2 = Observable.create(function(obs) {
+    obs.next({
+        type: 'list',
+        name: 'accion',
+        message: 'Acción a realizar',
+        choices: [ 'crear', 'actualizar', 'eliminar','leer'  ],
+    });
+    obs.next({
+        type: 'input',
+        name: 'archivo',
+        message: "Cúal es el nombre del archivo"
+    });
+    obs.next({
+        type: 'input',
+        name: 'pelicula',
+        message: "Cúal es el nombre de la nueva pelicula",
+    });
+    obs.complete();
+});
+
+const observe3 = Observable.create(function(obs) {
+    obs.next({
+        type: 'list',
+        name: 'accion',
+        message: 'Acción a realizar',
+        choices: [ 'crear', 'actualizar', 'eliminar','leer'  ],
+    });
+    obs.next({
+        type: 'input',
+        name: 'archivo',
+        message: "Cúal es el nombre del archivo a leer"
+    });
+    obs.complete();
+});
+
+const observe4 = Observable.create(function(obs) {
+    obs.next({
+        type: 'list',
+        name: 'accion',
+        message: 'Acción a realizar',
+        choices: [ 'crear', 'actualizar', 'eliminar','leer'  ],
+    });
+    obs.next({
+        type: 'input',
+        name: 'archivo',
+        message: "Cúal es el nombre del archivo a eliminar"
+    });
+    obs.complete();
+});*/
+
 inquirer.prompt(observe).then(respuesta => {
-    if (respuesta.accion == 'crear'){
-        mkdirpath(`${respuesta.pelicula}`);
-        const promesaEscritura$ = rxjs.from(promesaEscritura(`${respuesta.pelicula}/${respuesta.actor}`, JSON.stringify(respuesta, null, '  ') ));
+    if (respuesta.accion == 'crear') {
+        const promesaEscritura$ = rxjs.from(promesaEscritura(`${respuesta.archivo}`, JSON.stringify(respuesta, null, '  ')));
         promesaEscritura$
             .subscribe((ok) => {
                 console.log('Creación Exitosa', ok);
@@ -35,11 +122,15 @@ inquirer.prompt(observe).then(respuesta => {
                 console.log('Creación Fallida', error);
             }, () => {
                 console.log('completado');
+                observe;
             });
     }
-    else if (respuesta.accion == 'actualizar'){
+//});
+
+//inquirer.prompt(observe2).then(respuesta => {
+  else  if (respuesta.accion == 'actualizar'){
         const respuestasJSON = JSON.stringify(respuesta, null, '  ');
-        const promesaActualizar$ = rxjs.from(promesaActualizar(`${respuesta.pelicula}/${respuesta.actor}`, respuestasJSON));
+        const promesaActualizar$ = rxjs.from(promesaActualizar(`${respuesta.pelicula}/${respuesta.archivo}`, respuestasJSON));
         promesaActualizar$
             .subscribe((ok) => {
                 console.log('Actualización Exitosa', ok);
@@ -49,19 +140,25 @@ inquirer.prompt(observe).then(respuesta => {
                 console.log('completado');
             });
     }
-    else if (respuesta.accion == 'leer'){
+//});
+
+//inquirer.prompt(observe3).then(respuesta => {
+   else if (respuesta.accion == 'leer'){
         const respuestasJSON = JSON.stringify(respuesta, null, '  ');
-        const promesaLectura$ = rxjs.from(promesaLectura(`${respuesta.pelicula}/${respuesta.actor}`, respuestasJSON));
+        const promesaLectura$ = rxjs.from(promesaLectura(`${respuesta.pelicula}/${respuesta.archivo}`, respuestasJSON));
         promesaLectura$
             .subscribe((ok) => {
                 console.log('Lectura Exitosa', ok);
             }, (error) => {
-                console.log('LEctura Fallida', error);
+                console.log('Lectura Fallida', error);
             }, () => {
                 console.log('completado');
             });
     }
-    else if (respuesta.accion == 'eliminar'){
+//});
+
+//inquirer.prompt(observe4).then(respuesta =>{
+    if (respuesta.accion == 'eliminar'){
         const respuestasJSON = JSON.stringify(respuesta, null, '  ');
         const promesaEliminar$ = rxjs.from(promesaEliminar(`${respuesta.pelicula}/${respuesta.actor}`));
         promesaEliminar$
@@ -75,22 +172,6 @@ inquirer.prompt(observe).then(respuesta => {
     }
 });
 
-
-function mkdirpath(dirPath)
-{
-    if(!fs.existsSync(dirPath))
-    {
-        try
-        {
-            fs.mkdirSync(dirPath);
-        }
-        catch(e)
-        {
-            mkdirpath(path.dirname(dirPath));
-            mkdirpath(dirPath);
-        }
-    }
-}
 const promesaEscritura = (nombreArchivo, contenidoArchivo) =>{
     return new Promise((resolve, reject) => {
             fs.writeFile(nombreArchivo,contenidoArchivo,
@@ -107,7 +188,7 @@ const promesaEscritura = (nombreArchivo, contenidoArchivo) =>{
     )};
 const promesaActualizar = (nombreArchivo, contenidoArchivo) => {
     return new Promise((resolve, reject) => {
-            fs.readFile(nombreArchivo,
+            fs.readFile('Comics.json',
                 'utf-8',
                 (error, contenidoLeidoDelArchivo) => {
                     if (error) {
@@ -116,8 +197,8 @@ const promesaActualizar = (nombreArchivo, contenidoArchivo) => {
                     } else {
                         var f = new Date();
                         fs.writeFile(
-                            nombreArchivo,
-                            contenidoArchivo + 'actualizado el: ' +f.getDate() ,
+                            'Comics.json',
+                            contenidoArchivo,
                             (err) => {
                                 if (err) {
                                     reject(err);
@@ -137,7 +218,7 @@ const promesaActualizar = (nombreArchivo, contenidoArchivo) => {
 
 const promesaLectura = (nombreArchivo) =>{
     return new Promise((resolve, reject) => {
-            fs.readFile(nombreArchivo,'utf-8',
+            fs.readFile('Comics.json','utf-8',
                 (error, contenidoArchivo)=>{
                     if(error){
                         reject(error)
@@ -151,14 +232,14 @@ const promesaLectura = (nombreArchivo) =>{
     )};
 const promesaEliminar = (nombreArchivo) =>{
     return new Promise((resolve, reject) => {
-            fs.readFile(nombreArchivo,
+            fs.readFile('Comics.json',
                 (error)=>{
                     if(error){
                         reject(error)
                         console.log("el archivo no existe no se puede eliminar")
                     }
                     else {
-                        resolve(fs.unlinkSync(nombreArchivo))
+                        resolve(fs.unlinkSync('Comics.json'))
                     }
                 }
             );
