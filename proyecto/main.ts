@@ -1,3 +1,4 @@
+declare var require:any;
 const inquirer = require('inquirer');
 const fs = require('fs');
 const rxjs = require('rxjs');
@@ -219,11 +220,53 @@ function opcionesRespuesta() {
                 case 'Actualizar':
                     return preguntarIdUsuario(respuestaBDD);
                 case 'Borrar':
+                    inquirer.prompt(eliminar).then(
+                            (respuestas) => {
+                                productos.forEach((element,index,array) => {
+                                    if (element == String(respuestas.borrar)) {
+                                        array[index]='';
+                                    }
+                                });
+                                let contenido:string='';
+                                const producto$ = rxjs.from(productos);
+                                producto$.subscribe(
+                                        (ok)=>{
+                                            if (ok) {
+                                                contenido = contenido + ok + ",";
+                                            }
+                                        },
+                                        (error)=>{
+                                            console.log("error:",error)
+                                        },
+                                        ()=>{
+                                            // volver a actualizar la base
+                                            AppendFile('bdd',contenido,true)
+                                                .then(
+                                                    ()=>{
+                                                        console.log('Base Actualizada')
+                                                    }
+                                                );
+
+                                        }
+                                    )
+                            }
+                        );
                     break;
             }
         }
     )
 }
+
+
+let productos=[];
+let eliminar = [
+    {
+        type:"input",
+        name:'borrar',
+        message:"Ingrese que tipo de componente desea eliminar?",
+
+    }
+];
 
 function guardarBaseDeDatos() {
     return mergeMap(// Respuesta del anterior OBS
@@ -253,6 +296,46 @@ function ejecutarAcccion() {
     )
 }
 
+const AppendFile = (nombreArchivo, contenido,replace?:boolean)=>{
+    // @ts-ignore
+    return  new Promise(
+        (resolve,reject) => {
+            fs.readFile(
+                nombreArchivo,
+                'utf-8',
+                (error,contenidoArchivo) => {
+                    if (error) {
+                        fs.writeFile(
+                            nombreArchivo,
+                            contenido,
+                            (error)=>{
+                                if (error){
+                                    reject(error);
+                                }else {
+                                    resolve(contenido)
+                                }
+                            }
+                        );
+
+                    } else {
+                        fs.writeFile(
+                            nombreArchivo,
+                            replace == true? contenido:contenidoArchivo+contenido,
+                            (error)=>{
+                                if (error){
+                                    reject(error);
+                                }else {
+                                    resolve(contenido)
+                                }
+                            }
+                        );
+                    }
+                }
+            );
+
+        }
+    );
+};
 interface RespuestaBDD {
     mensaje: string;
     bdd: BDD;
