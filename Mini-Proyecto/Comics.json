@@ -1,5 +1,5 @@
 {
-  "accion": "crear",
-  "pelicula": "Iron man",
-  "archivo": "Avengers.json"
+  "accion": "actualizar",
+  "pelicula": "Iron manç",
+  "archivo": "Comics.json"
 }
