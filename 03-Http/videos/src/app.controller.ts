@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 import {AppService} from './app.service';
 import {Observable, of} from "rxjs";
-import {Usuario, UsuarioService} from "../usuario/usuario.service";
+import {Usuario, UsuarioService} from "./usuario/usuario.service";
 
 // http://192.168.1.2:3000/Usuario/saludar     METODO -> GET
 // http://192.168.1.2:3000/Usuario/salir   METODO -> POST
