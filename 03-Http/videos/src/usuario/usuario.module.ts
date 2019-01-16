@@ -3,31 +3,26 @@
 import {Module} from "@nestjs/common";
 import {UsuarioService} from "./usuario.service";
 import {UsuarioController} from "./usuario.controller";
-import { TypeOrmModule } from '@nestjs/typeorm';
+import {TypeOrmModule} from '@nestjs/typeorm';
+import {UsuarioEntity} from "./usuario-entity";
 
 @Module({
-    imports:[
-        UsuarioModule,
-        TypeOrmModule.forRoot({
-            type: 'mysql',
-            host: 'localhost',
-            port: 3306,
-            username: 'ocanabryan',
-            password: 'root',
-            database: 'ocanabryan_bdd',
-            synchronize: true,
-            entities: [
-
-            ]
-        }),
+    imports: [
+        // Repositorio
+        TypeOrmModule
+            .forFeature(
+                [
+                    UsuarioEntity
+                ]
+            )
     ],
-    controllers:[
+    controllers: [
         UsuarioController
     ],
-    providers:[
+    providers: [
         UsuarioService
     ],
-    exports:[
+    exports: [
         UsuarioService
     ]
 })

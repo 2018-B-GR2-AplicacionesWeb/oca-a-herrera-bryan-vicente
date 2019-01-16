@@ -9,11 +9,13 @@ import {
     Query,
     Param,
     Res,
-    Post, Body
+    Post, Body, Session, BadRequestException
 } from '@nestjs/common';
 import {AppService} from './app.service';
 import {Observable, of} from "rxjs";
 import {Usuario, UsuarioService} from "./usuario/usuario.service";
+import {ExpressionStatement} from "typescript";
+import {Code} from "typeorm";
 
 // http://192.168.1.2:3000/Usuario/saludar     METODO -> GET
 // http://192.168.1.2:3000/Usuario/salir   METODO -> POST
@@ -24,7 +26,7 @@ import {Usuario, UsuarioService} from "./usuario/usuario.service";
 
 // Decorador -> FUNCION
 // SE EJECUTA ANTES DE ALGO
-@Controller('Usuario') // Decoradores!
+@Controller() // Decoradores!
 export class AppController {
 
     // CONSTRUCTOR NO ES UN CONSTRUCTOR NORMAL!!!
@@ -42,7 +44,10 @@ export class AppController {
         @Query() queryParams,
         @Query('nombre') nombre,
         @Headers('seguridad') seguridad,
+        @Session() sesion
     ): string { // metodo!
+        console.log('Sesion:', sesion);
+
         return nombre;
     }
 
@@ -81,115 +86,46 @@ export class AppController {
         return of('Hola mundo');
     }
 
-
-    @Get('inicio')
-    inicio(
+    @Post('login')
+    @HttpCode(200)
+    async loginMetodo(
+        @Body('username') username: string,
+        @Body('password') password: string,
         @Res() response,
-        @Query('accion') accion: string,
-        @Query('nombre') nombre: string,
-        @Query('busqueda') busqueda: string,
+        @Session() sesion
     ) {
+        const identificado = await this._usuarioService
+            .login(username, password);
 
+        if (identificado) {
 
-        let mensaje; // undefined
+            sesion.usuario = username;
 
-        if (accion && nombre) {
-            switch (accion) {
-                case 'actualizar':
-                    mensaje = `Registro ${nombre} actualizado`;
-                    break;
-                case 'borrar':
-                    mensaje = `Registro ${nombre} eliminado`;
-                    break;
-                case 'crear':
-                    mensaje = `Registro ${nombre} creado`;
-                    break;
-            }
-        }
+            response.redirect('/saludar')
 
-        let usuarios: Usuario[];
-        if (busqueda) {
-            usuarios = this._usuarioService
-                .buscarPorNombreOBiografia(busqueda);
         } else {
-            usuarios = this._usuarioService.usuarios
+            throw new BadRequestException({mensaje: 'Error login'})
         }
 
-        response.render('inicio', {
-            nombre: 'Adrian',
-            arreglo: usuarios,
-            mensaje: mensaje
-        });
     }
 
-    @Post('borrar/:idUsuario')
-    borrar(
-        @Param('idUsuario') idUsuario: string,
+    @Get('login')
+    loginVista(
         @Res() response
     ) {
-        const usuario = this._usuarioService
-            .borrar(Number(idUsuario));
-
-        const parametrosConsulta = `?accion=borrar&nombre=${usuario.nombre}`;
-
-        response.redirect('/Usuario/inicio' + parametrosConsulta);
+        response.render('login');
     }
 
-    @Get('crear-usuario')
-    crearUsuario(
-        @Res() response
-    ) {
-        response.render(
-            'crear-usuario'
-        )
-    }
-
-    @Get('actualizar-usuario/:idUsuario')
-    actualizarUsuario(
-        @Param('idUsuario') idUsuario: string,
-        @Res() response
-    ) {
-        const usuarioAActualizar = this
-            ._usuarioService
-            .buscarPorId(Number(idUsuario));
-
-        response.render(
-            'crear-usuario', {
-                usuario: usuarioAActualizar
-            }
-        )
-    }
-
-
-    @Post('actualizar-usuario/:idUsuario')
-    actualizarUsuarioFormulario(
-        @Param('idUsuario') idUsuario: string,
+    @Get('logout')
+    logout(
         @Res() response,
-        @Body() usuario: Usuario
+        @Session() sesion,
     ) {
-        usuario.id = +idUsuario;
-
-        this._usuarioService
-            .actualizar(+idUsuario, usuario);
-
-        const parametrosConsulta = `?accion=actualizar&nombre=${usuario.nombre}`;
-
-        response.redirect('/Usuario/inicio' + parametrosConsulta);
+        sesion.usuario = undefined;
+        sesion.destroy();
+        response.redirect('/login');
 
     }
 
-
-    @Post('crear-usuario')
-    crearUsuarioFormulario(
-        @Body() usuario: Usuario,
-        @Res() response
-    ) {
-
-        this._usuarioService.crear(usuario);
-
-        const parametrosConsulta = `?accion=crear&nombre=${usuario.nombre}`;
-
-        response.redirect('/Usuario/inicio' + parametrosConsulta)
-    }
 
 }
